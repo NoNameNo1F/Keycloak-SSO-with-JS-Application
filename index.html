@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="assests/css/styles.css">
+    <script src="http://localhost:8080/auth/js/keycloak.js"></script>
+    <script src="assests/js/function.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Keycloak SSO with JS Application</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #1e085a;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <img id="logo" style="height: 150px; width: 150px; border-radius: 100%; padding: 15px 15px 15px 15px" src="./assests/img/logo.png" alt="NoNameNo1F.wordpress.com">
+        <h1 id="headerLabel" align="center">Demo Keycloak SSO in Javascript</h1>
+    </div>
+
+    <div id="content" style="width:60%; margin:0 auto;">
+        <p style="color: darkgray;margin: 90px 50px 25px 50px;">
+            This is  <strong style="color:deepskyblue"> Group 15 - Cryptography and Application </strong> with 4 people:
+        </p>
+        <p></p>
+        <table align="center">
+            <caption> Information Member of Group 15</caption>
+            <tr>
+                <th>Name</th>
+                <th>ID Student</th>
+            </tr>
+            <tr>
+                <td>Nguyễn Cao Nam Vũ (Leader)</td>
+                <td>20127670</td>
+            </tr>
+            <tr>
+                <td>Phạm Đăng Quân</td>
+                <td>20127292</td>
+            </tr>
+            <tr>
+                <td>Nguyễn Quang Tiến</td>
+                <td>20127430</td>
+            </tr>
+            <tr>
+                <td>Lu Phi Hùng</td>
+                <td>20127509</td>
+            </tr>
+        </table>
+    </div>
+    <div id="table-attr">
+        <table align="center">
+            <caption>Information of User</caption>
+            <tr> 
+                <th>Attributes</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td id="row-username">${user.username}</td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td id="row-firstName">${user.username}</td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td id="row-lastName">${user.username}</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td id="row-name">${user.fullName}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td id="row-email">${user.email}</td>
+            </tr>
+        </table>
+    </div>
+    <div d="content" style="width:20%; margin:100px auto;">
+        <div>
+            <textarea id="ta-token">EMPTY</textarea>
+            <textarea id="ta-refreshToken">EMPTY</textarea>
+        </div>
+        
+        <input type="button" value="Update Token" onclick="refreshToken()" />
+
+        <input type="button" value="LOGOUT" onclick="logout()" />
+    </div>   
+</body>
+</html>
