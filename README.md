@@ -6,9 +6,9 @@ or just open an issue with the label "enhancement".
 Don't forget to give this project a star for additional support ;)
 Maybe you can mention me or this repo in the acknowledgements too
 -->
-<div align="center">
+<div aligns="center">
 
-  <img src="assets/logo.png" alt="logo" width="200" height="auto" />
+  <img src="assests/logo.png" alt="logo" width="200" height="auto" />
   <h1>Keycloak-SSO-with-JS-Application</h1>
   
   <p>
@@ -67,21 +67,16 @@ Maybe you can mention me or this repo in the acknowledgements too
   - [Tech Stack](#space_invader-tech-stack)
   - [Features](#dart-features)
   - [Color Reference](#art-color-reference)
-  - [Environment Variables](#key-environment-variables)
 - [Getting Started](#toolbox-getting-started)
   - [Prerequisites](#bangbang-prerequisites)
   - [Installation](#gear-installation)
-  - [Running Tests](#test_tube-running-tests)
   - [Run Locally](#running-run-locally)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [Usage](#eyes-usage)
-- [Roadmap](#compass-roadmap)
 - [Contributing](#wave-contributing)
-  - [Code of Conduct](#scroll-code-of-conduct)
-- [FAQ](#grey_question-faq)
 - [License](#warning-license)
 - [Contact](#handshake-contact)
 - [Acknowledgements](#gem-acknowledgements)
+- [Documentation](#book-documentation)
 
 <!-- About the Project -->
 
@@ -91,7 +86,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 ### :camera: Screenshots
 
-<div align="center"> 
+<div aligns="center"> 
   <img src="./assests/img/Demo.png" alt="screenshot" />
 </div>
 
@@ -109,8 +104,6 @@ Maybe you can mention me or this repo in the acknowledgements too
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://openjdk.org/">OpenJDK</a></li>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
     <li><a href="https://keycloak.org">Keycloak</a></li>
   </ul>
 </details>
@@ -121,16 +114,15 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 <details>
 <summary>DevOps</summary>
-  <ul>
-    <li><a href="https://www.docker.com/">Docker</a></li>
-  </ul>
 </details>
 
 <!-- Features -->
 
 ### :dart: Features
 
+- Authentication user want to use the application at the first time
 - Login/Logout
+- Update Token
 
 <!-- Color Reference -->
 
@@ -138,20 +130,10 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 | Color           | Hex                                                              |
 | --------------- | ---------------------------------------------------------------- |
-| Primary Color   | ![#222831](https://via.placeholder.com/10/222831?text=+) #222831 |
-| Secondary Color | ![#393E46](https://via.placeholder.com/10/393E46?text=+) #393E46 |
-| Accent Color    | ![#00ADB5](https://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
-| Text Color      | ![#EEEEEE](https://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE |
-
-<!-- Env Variables -->
-
-### :key: Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`API_KEY`
-
-`ANOTHER_API_KEY`
+| Primary Color   | ![#7367DA](https://via.placeholder.com/10/7367DA?text=+) #7367DA |
+| Secondary Color | ![#1e085a](https://via.placeholder.com/10/1e085a?text=+) #1e085a |
+| Accent Color    | ![#f2f2f2](https://via.placeholder.com/10/f2f2f2?text=+) #f2f2f2 |
+| Text Color      | ![#dddddd](https://via.placeholder.com/10/dddddd?text=+) #dddddd |
 
 <!-- Getting Started -->
 
@@ -161,31 +143,37 @@ To run this project, you will need to add the following environment variables to
 
 ### :bangbang: Prerequisites
 
-This project uses Yarn as package manager
+Install and setup environment OpenJDKs to run Keycloak, keep up-to-date java/javac lastest version.
 
 ```bash
- npm install --global yarn
+  sudo apt-get update
+  sudo apt install default-jre
+  or
+  sudo apt install defailt-jdk
+```
+
+Configure JAVA_HOME Path
+
+```bash
+  update-alternatives --config java
+  #Add JAVA_HOME to the environment
+  sudo nano /etc/environment
+  #then parse it
+  JAVA_HOME="JAVA_HOME=/lib/jvm/java-11-openjdk-amd64/bin/java"
+  #force reload the environment configuration file
+  source /etc/environment
 ```
 
 <!-- Installation -->
 
 ### :gear: Installation
 
-Install my-project with npm
+This project is running Keycloak version 21.0.2, so keep up-to-date.
+After download the zip file, we unzip and run it at localhost:8080
 
 ```bash
-  npm install my-project
-  cd my-project
-```
-
-<!-- Running Tests -->
-
-### :test_tube: Running Tests
-
-To run tests, run the following command
-
-```bash
-  yarn test test
+  cd ./keycloak-21.0.2
+  bin/kc.sh start-dev
 ```
 
 <!-- Run Locally -->
@@ -207,45 +195,22 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  npm install
+  npm init
+  npm install express
+  npm install keycloak-js
 ```
 
 Start the server
 
 ```bash
-  npm start
-```
-
-<!-- Deployment -->
-
-### :triangular_flag_on_post: Deployment
-
-To deploy this project run
-
-```bash
-  yarn deploy
+  node index.js
 ```
 
 <!-- Usage -->
 
 ## :eyes: Usage
 
-Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
-
-```javascript
-import Component from "my-project";
-
-function App() {
-  return <Component />;
-}
-```
-
-<!-- Roadmap -->
-
-## :compass: Roadmap
-
-- [x] Todo 1
-- [ ] Todo 2
+This project is only for demonstration SSO based-on Open Source: Keycloak, which uses Identify Provider for authentication user login after User is authenticated they can use the application.
 
 <!-- Contributing -->
 
@@ -259,24 +224,6 @@ Contributions are always welcome!
 
 See `contributing.md` for ways to get started.
 
-<!-- Code of Conduct -->
-
-### :scroll: Code of Conduct
-
-Please read the [Code of Conduct](https://github.com/NoNameNo1F/Keycloak-SSO-with-JS-Application/blob/master/CODE_OF_CONDUCT.md)
-
-<!-- FAQ -->
-
-## :grey_question: FAQ
-
-- Question 1
-
-  - Answer 1
-
-- Question 2
-
-  - Answer 2
-
 <!-- License -->
 
 ## :warning: License
@@ -287,7 +234,7 @@ Distributed under the no License. See LICENSE.txt for more information.
 
 ## :handshake: Contact
 
-Nguyễn Cao Nam Vũ - [@NoNameNo1F](https://twitter.com/NoNameNo1F) - NoNameNo1F@gmail.com
+Nguyễn Cao Nam Vũ - [@NoNameNo1F](linkedin.com/in/vu-nguyen-a61a83235) - NoNameNo1F@gmail.com
 
 Project Link: [https://github.com/NoNameNo1F/Keycloak-SSO-with-JS-Application](https://github.com/NoNameNo1F/Keycloak-SSO-with-JS-Application)
 
@@ -295,19 +242,14 @@ Project Link: [https://github.com/NoNameNo1F/Keycloak-SSO-with-JS-Application](h
 
 ## :gem: Acknowledgements
 
-Use this section to mention useful resources and libraries that you have used in your projects.
-
-- [Shields.io](https://shields.io/)
-- [Awesome README](https://github.com/matiassingers/awesome-readme)
-- [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
-- [Readme Template](https://github.com/othneildrew/Best-README-Template)
+- [Awesome README](https://github.com/Louis3797/awesome-readme-template)
 
 <!-- Documentation -->
 
 ## :book: Documentation
 
-Due to based on an open source , we recommend using the documentation from the origin page
+Due to based on an open source , we recommend using the documentation from the original page
 
-- [Keycloak]
-- [Keycloak_JavaScript]
-- [Keycloak_Documentation]
+- [Keycloak](https://www.keycloak.org/)
+- [Keycloak_JavaScript_Adapter](https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter)
+- [Keycloak_Documentation](https://www.keycloak.org/documentation.html)
