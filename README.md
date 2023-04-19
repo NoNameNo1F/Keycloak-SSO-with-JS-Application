@@ -8,7 +8,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 -->
 <div aligns="center">
 
-  <img src="assests/logo.png" alt="logo" width="200" height="auto" />
+  <img src="./assests/logo.png" alt="logo" width="200" height="auto" />
   <h1>Keycloak-SSO-with-JS-Application</h1>
   
   <p>
