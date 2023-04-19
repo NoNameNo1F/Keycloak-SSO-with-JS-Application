@@ -1,15 +1,6 @@
 var keycloak = new Keycloak();
 
-// function initKeycloak() {
-//     keycloak.init({ onLoad: 'login-required' }).then(function (authenticated) {
-//         constructTableRows(keycloak.idTokenParsed);
-//         pasteToken(keycloak.token);
-//     }).catch(function () {
-//         alert('failed to initialize');
-//     });
-// }
 function initKeycloak() {
-    const keycloak = new Keycloak();
     keycloak.init({ onLoad: 'login-required' }).then(function (authenticated) {
         constructTableRows(keycloak.idTokenParsed);
         pasteToken(keycloak.token);
