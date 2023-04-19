@@ -1,42 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="assests/css/styles.css">
+    <link rel="stylesheet" href="assests/css/style.css">
     <script src="http://localhost:8080/auth/js/keycloak.js"></script>
     <script src="assests/js/function.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo Keycloak SSO with JS Application</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #1e085a;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        tr:nth-child(odd) {
-            background-color: #ffffff;
-        }
-        tr:hover {
-            background-color: #ddd;
-        }
-    </style>
 </head>
-<body>
+<body onLoad="initKeycloak()">
     <div id="header">
-        <img id="logo" style="height: 150px; width: 150px; border-radius: 100%; padding: 15px 15px 15px 15px" src="./assests/img/logo.png" alt="NoNameNo1F.wordpress.com">
+        <img id="logo"  src="./assests/img/logo.png" alt="NoNameNo1F.wordpress.com">
         <h1 id="headerLabel" align="center">Demo Keycloak SSO in Javascript</h1>
     </div>
 
