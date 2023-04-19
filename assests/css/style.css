@@ -1,53 +1,53 @@
 body {
-    background-color: black;
+  background-color: rgb(115, 103, 218);
 }
 
 #header {
-    width: 100%;
-    display: flex;
+  width: 100%;
+  display: flex;
 }
 
 #logo {
-    width: 25%;
+  width: 25%;
 }
 
 #headerLabel {
-    width: 100%;
-    margin-top: 70px;
-    color: orangered;
-    font-family: monospace;
-    font-size: xxx-large;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  top: 190px;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  margin-top: 70px;
+  color: orangered;
+  font-family: monospace;
+  font-size: xxx-large;
 }
 
-li {
-  float: left;
+
+img {
+align-items: center;
+height: 150px;
+width: 150px;
+border-radius: 100%;
+padding: 15px 15px 15px 15px;
 }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+table {
+border-collapse: collapse;
+width: 100%;
 }
-
-li a:hover:not(.active) {
-  background-color: #111;
+th, td {
+border: 1px solid #dddddd;
+text-align: left;
+padding: 8px;
+text-align: center;
 }
-
-.active {
-  background-color: #00B050;
+th {
+background-color: #1e085a;
+color: white;
+}
+tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+tr:nth-child(odd) {
+background-color: #ffffff;
+}
+tr:hover {
+background-color: #ddd;
 }
